@@ -16,7 +16,7 @@
             ></b-img-lazy>
             <div class="manga-title my-3">
               <h6 class="text-success text-center">{{details.title}}</h6>
-              <p>{{details.alternatives}}</p>
+              <p class="small text-center">{{details.alternatives}}</p>
             </div>
             <b-button
               variant="primary"
@@ -46,6 +46,23 @@
             >{{ genre.genre }}</b-badge>
           </div>
         </div>
+
+        <div class="p-2 mt-2 bg-light shadow-sm my-3 rounded">
+          <div v-if="loading" class="text-center">
+            <Loading></Loading>
+          </div>
+          <div class="manga-details" v-else>
+            <h6>Details</h6>
+            <div class="clearfix small mb-1">
+              <strong class="float-left">Status:</strong>
+              <span class="float-right">{{details.status}}</span>
+            </div>
+            <div class="clearfix small mb-1">
+              <p class="float-left">Updated On:</p>
+              <span class="float-right">{{details.updated}}</span>
+            </div>
+          </div>
+        </div>
       </b-col>
       <b-col cols="12" md="9">
         <div class="p-2 bg-light shadow-sm rounded">
@@ -62,7 +79,7 @@
             <Loading></Loading>
           </div>
           <div class="manga-chapters" v-else>
-            <h6>Description</h6>
+            <h6>Chapters</h6>
             <div class="chapters-table overflow-auto" style="max-height:720px">
               <table class="table table-hover">
                 <thead>

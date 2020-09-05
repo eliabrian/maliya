@@ -32,7 +32,7 @@
               <div class="manga-summary mt-3">
                 <div class="manga-title">
                   <h6 class="m-0">
-                    <a :href="`/manga`">
+                    <a :href="`/manga/${manga.slug}`">
                       <div class="text-truncate">{{ manga.title }}</div>
                     </a>
                   </h6>
